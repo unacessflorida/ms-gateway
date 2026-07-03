@@ -7,44 +7,44 @@ spring:
         webmvc:
           routes:
             - id: ms-auth
-              uri: http://localhost:8083
+              uri: ${AUTH_URL:http://localhost:8083}
               predicates:
                 - Path=/api/v1/usuarios/**
             - id: ms-roles
-              uri: http://localhost:8084
+              uri: ${ROLES_URL:http://localhost:8084}
               predicates:
                 - Path=/api/v1/roles/**
             - id: ms-pacientes
-              uri: http://localhost:8085
+              uri: ${PACIENTES_URL:http://localhost:8085}
               predicates:
                 - Path=/api/v1/pacientes/**
             - id: ms-pin
-              uri: http://localhost:8086
+              uri: ${PIN_URL:http://localhost:8086}
               predicates:
                 - Path=/api/v1/pin/**
             - id: ms-derivaciones
-              uri: http://localhost:8087
+              uri: ${DERIVACIONES_URL:http://localhost:8087}
               predicates:
                 - Path=/api/v1/derivaciones/**
             - id: ms-examenes
-              uri: http://localhost:8088
+              uri: ${EXAMENES_URL:http://localhost:8088}
               predicates:
                 - Path=/api/v1/examenes/**
             - id: ms-citas
-              uri: http://localhost:8089
+              uri: ${CITAS_URL:http://localhost:8089}
               predicates:
                 - Path=/api/v1/citas/**
             - id: ms-notificaciones
-              uri: http://localhost:8090
+              uri: ${NOTIFICACIONES_URL:http://localhost:8090}
               predicates:
                 - Path=/api/v1/notificaciones/**
             - id: ms-alertas
-              uri: http://localhost:8091
+              uri: ${ALERTAS_URL:http://localhost:8091}
               predicates:
                 - Path=/api/v1/alertas/**
 
 server:
-  port: 8080
+  port: ${PORT:8080}
 
 logging:
   level:
